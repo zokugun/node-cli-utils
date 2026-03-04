@@ -1,0 +1,11 @@
+entry:
+  .: index.ts
+  ansi-colors: ansi-colors.ts
+  cli-spinners: cli-spinners.ts
+  commander: commander.ts
+  enquirer: enquirer.ts
+  logger: logger.ts
+format:
+  - esm
+  - cjs
+outDir: lib

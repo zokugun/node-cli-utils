@@ -1,0 +1,110 @@
+{
+	"name": "@zokugun/cli-utils",
+	"description": "Utils for CLI app",
+	"version": "0.0.0",
+	"author": {
+		"name": "Baptiste Augrain",
+		"email": "daiyam@zokugun.org"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/zokugun/node-cli-utils",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zokugun/node-cli-utils.git"
+	},
+	"bugs": {
+		"url": "https://github.com/zokugun/node-cli-utils/issues"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./lib/esm/index.mjs",
+			"require": "./lib/cjs/index.cjs"
+		},
+		"./ansi-colors": {
+			"import": "./lib/esm/ansi-colors.mjs",
+			"require": "./lib/cjs/ansi-colors.cjs"
+		},
+		"./cli-spinners": {
+			"import": "./lib/esm/cli-spinners.mjs",
+			"require": "./lib/cjs/cli-spinners.cjs"
+		},
+		"./commander": {
+			"import": "./lib/esm/commander.mjs",
+			"require": "./lib/cjs/commander.cjs"
+		},
+		"./enquirer": {
+			"import": "./lib/esm/enquirer.mjs",
+			"require": "./lib/cjs/enquirer.cjs"
+		},
+		"./logger": {
+			"import": "./lib/esm/logger.mjs",
+			"require": "./lib/cjs/logger.cjs"
+		}
+	},
+	"main": "lib/cjs/index.cjs",
+	"module": "lib/esm/index.mjs",
+	"typesVersions": {
+		"*": {
+			".": [
+				"./lib/cjs/index.d.cts"
+			],
+			"ansi-colors": [
+				"./lib/cjs/ansi-colors.d.cts"
+			],
+			"cli-spinners": [
+				"./lib/cjs/cli-spinners.d.cts"
+			],
+			"commander": [
+				"./lib/cjs/commander.d.cts"
+			],
+			"enquirer": [
+				"./lib/cjs/enquirer.d.cts"
+			],
+			"logger": [
+				"./lib/cjs/logger.d.cts"
+			]
+		}
+	},
+	"scripts": {
+		"build": "npm run clean && npm run build:lib",
+		"build:lib": "tsc-leda generate",
+		"build:package": "tsc-leda update-package",
+		"clean": "rimraf lib .src",
+		"compile:src": "tsc -p src",
+		"lint": "xo",
+		"lint:fix": "xo --fix",
+		"postinstall": "patch-package",
+		"prepack": "npm run build",
+		"prepare": "husky; fixpack || true",
+		"release": "release-it",
+		"watch:src": "tsc-watch -p src"
+	},
+	"dependencies": {
+		"@zokugun/log-update-plus": "^0.1.0",
+		"ansi-colors": "^4.1.3",
+		"cli-spinners": "^3.4.0",
+		"commander": "^14.0.3",
+		"enquirer": "^2.4.1",
+		"patch-package": "^8.0.1"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
+		"@types/node": "^20.14.8",
+		"@zokugun/tsc-leda": "^0.3.1",
+		"fixpack": "^4.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.4",
+		"release-it": "^19.2.4",
+		"tsc-watch": "^7.2.0",
+		"typescript": "^5.7.3",
+		"xo": "0.60.0"
+	},
+	"overrides": {
+		"terser-webpack-plugin": {
+			"serialize-javascript": "^7.0.3"
+		}
+	},
+	"keywords": []
+}
