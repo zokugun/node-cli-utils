@@ -78,6 +78,7 @@
 		"prepack": "npm run build",
 		"prepare": "husky; fixpack || true",
 		"release": "release-it",
+		"watch:build": "tsc-watch -p src --onSuccess 'npm run build'",
 		"watch:src": "tsc-watch -p src"
 	},
 	"dependencies": {

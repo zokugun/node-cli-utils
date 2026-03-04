@@ -1,3 +1,4 @@
+import process from 'node:process';
 import { stdout } from '@zokugun/log-update-plus';
 import c from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
@@ -18,9 +19,18 @@ export function check(message: string): void { // {{{
 } // }}}
 
 export function error(message: string): void { // {{{
-	stop(`${c.red(c.symbols.cross)} ${c.bold('Error!')}`);
-
+	stdout.persist(`${c.red(c.symbols.cross)} ${c.bold('Error!')}`);
 	stdout.persist(message);
+} // }}}
+
+export function fatal(message: string, code: number = 1): never { // {{{
+	stop();
+
+	stdout.persist(`${c.red(c.symbols.cross)} ${c.bold('Fatal!')}`);
+	stdout.persist(message);
+
+	// eslint-disable-next-line unicorn/no-process-exit
+	process.exit(code);
 } // }}}
 
 export function finish(duration?: number): void { // {{{
@@ -103,6 +113,7 @@ export default {
 	begin,
 	check,
 	error,
+	fatal,
 	finish,
 	info,
 	newLine,
