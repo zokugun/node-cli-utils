@@ -32,8 +32,18 @@ This project **does not use the issue tracker for discussion or feature requests
 
 Any Discussion which clearly identifies a problem and can be confirmed or reproduced will be converted to an Issue by a maintainer, so as a user finding a valid problem you don't do any extra work anyway. Thank you.
 
-[Discussion]: https://github.com/REPOSITORY_SLUG/discussions
-[discussions]: https://github.com/REPOSITORY_SLUG/discussions
+[Discussion]: https://github.com/zokugun/node-cli-utils/discussions
+[discussions]: https://github.com/zokugun/node-cli-utils/discussions
+
+## Use of AI
+
+We welcome use of AI tools to help draft discussions, issues, or code, but please follow these rules:
+
+- Use AI tools responsibly and disclose their use.
+- Ensure all content passes a human review for authenticity and quality.
+- Be concise. Do not write verbose discussions, issues or PR.
+
+Discussions, issues or PR that consist solely of unvetted AI outputs may be closed at the maintainer's discretion.
 
 ## I have a bug! / Something isn't working
 
@@ -52,15 +62,15 @@ If your issue hasn't been reported already, open an ["Issue Triage"] discussion 
 >
 > Please make sure that you _only_ use the "Issue Triage" category for reporting bugs — thank you!
 
-[closed issues]: https://github.com/REPOSITORY_SLUG/issues?q=is%3Aissue%20state%3Aclosed
-[closed discussions]: https://github.com/REPOSITORY_SLUG/discussions?discussions_q=is%3Aclosed
-["Issue Triage"]: https://github.com/REPOSITORY_SLUG/discussions/new?category=issue-triage
+[closed issues]: https://github.com/zokugun/node-cli-utils/issues?q=is%3Aissue%20state%3Aclosed
+[closed discussions]: https://github.com/zokugun/node-cli-utils/discussions?discussions_q=is%3Aclosed
+["Issue Triage"]: https://github.com/zokugun/node-cli-utils/discussions/new?category=issue-triage
 
 ## I have an idea for a feature
 
 Like bug reports, first search through both issues and discussions and try to find if your feature has already been requested. Otherwise, open a discussion in the ["Feature Requests, Ideas"] category.
 
-["Feature Requests, Ideas"]: https://github.com/REPOSITORY_SLUG/discussions/new?category=feature-requests-ideas
+["Feature Requests, Ideas"]: https://github.com/zokugun/node-cli-utils/discussions/new?category=feature-requests-ideas
 
 ## I want to make changes
 
