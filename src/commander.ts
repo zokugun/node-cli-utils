@@ -1,5 +1,5 @@
-import * as commander from 'commander';
-import { Command } from 'commander';
+import * as commander from '@commander-js/extra-typings';
+import { Command } from '@commander-js/extra-typings';
 
 export default commander;
 
