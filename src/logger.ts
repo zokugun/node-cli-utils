@@ -4,18 +4,48 @@ import c from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
 
 export type IndicatorLoading = ReturnType<typeof setInterval>;
+export type Spinner = {
+	fail: () => void;
+	succeed: () => void;
+};
+
 const { dots } = cliSpinners;
 
 let $loading: IndicatorLoading | undefined;
 let $progessFn: (() => void) | undefined;
 let $start: number = 0;
 
-export function begin(): void { // {{{
+export function beginTimer(): void { // {{{
 	$start = Date.now();
 } // }}}
 
 export function check(message: string): void { // {{{
 	stdout.persist(`${c.green(c.symbols.check)} ${message}`);
+} // }}}
+
+export function createSpinner(label: string): Spinner { // {{{
+	showProgress(label);
+
+	return {
+		fail: () => {
+			stdout.persist(`${c.red(c.symbols.cross)} ${label}`);
+		},
+		succeed: () => {
+			stdout.persist(`${c.green(c.symbols.check)} ${label}`);
+		},
+	};
+} // }}}
+
+export function createStep(label: string): () => void { // {{{
+	showProgress(c.bold(label) + c.dim('...'));
+
+	return () => {
+		check(c.bold(`${label}:`) + c.dim(' done'));
+	};
+} // }}}
+
+export function debug(message: string): void { // {{{
+	stdout.persist(`${c.gray(c.symbols.pointerSmall)} ${message}`);
 } // }}}
 
 export function error(message: string): void { // {{{
@@ -24,7 +54,7 @@ export function error(message: string): void { // {{{
 } // }}}
 
 export function fatal(message: string, code: number = 1): never { // {{{
-	stop();
+	stopProgress();
 
 	stdout.persist(`${c.red(c.symbols.cross)} ${c.bold('Fatal!')}`);
 	stdout.persist(message);
@@ -33,10 +63,10 @@ export function fatal(message: string, code: number = 1): never { // {{{
 	process.exit(code);
 } // }}}
 
-export function finish(duration?: number): void { // {{{
+export function finishTimer(duration?: number): void { // {{{
 	if(typeof duration !== 'number') {
 		if($start === 0) {
-			stop(`🏁 ${c.bold('Done')}`);
+			stopProgress(`🏁 ${c.bold('Done')}`);
 
 			return;
 		}
@@ -44,7 +74,7 @@ export function finish(duration?: number): void { // {{{
 		duration = Math.ceil((Date.now() - $start) / 1000);
 	}
 
-	stop(`🏁 ${c.bold('Done')} (in ${duration}s).`);
+	stopProgress(`🏁 ${c.bold('Done')} (in ${duration}s).`);
 } // }}}
 
 export function info(message: string): void { // {{{
@@ -55,13 +85,19 @@ export function newLine(): void { // {{{
 	stdout.persist('');
 } // }}}
 
-export function pause(): void { // {{{
+export function pauseProgress(): void { // {{{
 	clearInterval($loading);
 
 	stdout.render('');
 } // }}}
 
-export function progress(label: string): void { // {{{
+export function resumeProgress(): void { // {{{
+	if($progessFn) {
+		$loading = setInterval($progessFn, cliSpinners.dots.interval);
+	}
+} // }}}
+
+export function showProgress(label: string): void { // {{{
 	clearInterval($loading);
 
 	let index = 0;
@@ -77,21 +113,7 @@ export function progress(label: string): void { // {{{
 	$loading = setInterval($progessFn, cliSpinners.dots.interval);
 } // }}}
 
-export function resume(): void { // {{{
-	if($progessFn) {
-		$loading = setInterval($progessFn, cliSpinners.dots.interval);
-	}
-} // }}}
-
-export function step(label: string): () => void { // {{{
-	progress(c.bold(label) + c.dim('...'));
-
-	return () => {
-		check(c.bold(`${label}:`) + c.dim(' done'));
-	};
-} // }}}
-
-export function stop(message: string = ''): void { // {{{
+export function stopProgress(message: string = ''): void { // {{{
 	clearInterval($loading);
 
 	$loading = undefined;
@@ -110,18 +132,20 @@ export function warn(message: string): void { // {{{
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-	begin,
+	beginTimer,
 	check,
+	createSpinner,
+	createStep,
+	debug,
 	error,
 	fatal,
-	finish,
+	finishTimer,
 	info,
 	newLine,
-	pause,
-	progress,
-	resume,
-	step,
-	stop,
+	pauseProgress,
+	resumeProgress,
+	showProgress,
+	stopProgress,
 	success,
 	warn,
 };
