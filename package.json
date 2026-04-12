@@ -101,7 +101,7 @@
 		"@commitlint/cli": "19.8.1",
 		"@commitlint/config-conventional": "19.8.1",
 		"@types/node": "20.19.39",
-		"@zokugun/tsc-leda": "0.3.1",
+		"@zokugun/tsc-leda": "0.3.2",
 		"fixpack": "4.0.0",
 		"husky": "9.1.7",
 		"lint-staged": "16.4.0",
