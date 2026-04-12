@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0 | 2026-04-12
+- add functions `createSpinner` and `debug` to the `logger`
+- rename functions in the `logger`
+
 ## v0.2.1 | 2026-04-10
 - add typings to `commander` with `@commander-js/extra-typings`
 - use locked dependencies
