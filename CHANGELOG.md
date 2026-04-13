@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.3.1 | 2026-04-13
+- add `print` function to `logger`
+
 ## v0.3.0 | 2026-04-12
 - add functions `createSpinner` and `debug` to the `logger`
 - rename functions in the `logger`
