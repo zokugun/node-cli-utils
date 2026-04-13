@@ -91,6 +91,10 @@ export function pauseProgress(): void { // {{{
 	stdout.render('');
 } // }}}
 
+export function print(message: string): void { // {{{
+	stdout.persist(message);
+} // }}}
+
 export function resumeProgress(): void { // {{{
 	if($progessFn) {
 		$loading = setInterval($progessFn, cliSpinners.dots.interval);
@@ -143,6 +147,7 @@ export default {
 	info,
 	newLine,
 	pauseProgress,
+	print,
 	resumeProgress,
 	showProgress,
 	stopProgress,
