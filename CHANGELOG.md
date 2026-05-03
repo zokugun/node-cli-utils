@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.3.2 | 2026-05-03
+- don't display spinners on CI
+
 ## v0.3.1 | 2026-04-13
 - add `print` function to `logger`
 
