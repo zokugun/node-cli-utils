@@ -2,6 +2,7 @@ import process from 'node:process';
 import { stdout } from '@zokugun/log-update-plus';
 import c from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
+import { isCI } from './utils/is-ci.js';
 
 export type IndicatorLoading = ReturnType<typeof setInterval>;
 export type Spinner = {
@@ -102,19 +103,24 @@ export function resumeProgress(): void { // {{{
 } // }}}
 
 export function showProgress(label: string): void { // {{{
-	clearInterval($loading);
+	if(isCI()) {
+		stdout.render(label);
+	}
+	else {
+		clearInterval($loading);
 
-	let index = 0;
+		let index = 0;
 
-	$progessFn = () => {
-		if(!$loading) {
-			return;
-		}
+		$progessFn = () => {
+			if(!$loading) {
+				return;
+			}
 
-		stdout.render(`${c.cyan(dots.frames[index = ++index % dots.frames.length])} ${label}`);
-	};
+			stdout.render(`${c.cyan(dots.frames[index = ++index % dots.frames.length])} ${label}`);
+		};
 
-	$loading = setInterval($progessFn, cliSpinners.dots.interval);
+		$loading = setInterval($progessFn, cliSpinners.dots.interval);
+	}
 } // }}}
 
 export function stopProgress(message: string = ''): void { // {{{
