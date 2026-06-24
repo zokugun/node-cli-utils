@@ -29,9 +29,13 @@ export function createSpinner(label: string): Spinner { // {{{
 
 	return {
 		fail: () => {
+			stopProgress();
+
 			stdout.persist(`${c.red(c.symbols.cross)} ${label}`);
 		},
 		succeed: () => {
+			stopProgress();
+
 			stdout.persist(`${c.green(c.symbols.check)} ${label}`);
 		},
 	};
