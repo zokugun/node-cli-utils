@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.3.3 | 2026-06-24
+- stop spinner when done
+
 ## v0.3.2 | 2026-05-03
 - don't display spinners on CI
 
