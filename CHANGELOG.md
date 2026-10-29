@@ -3,6 +3,13 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+Unreleased
+----------
+
+### Changed
+
+- replace `enquirer` patch with `enquirer.d.ts` file containing need-to-be-exported types
+
 [v0.3.3](https://github.com/zokugun/node-cli-utils/releases/tag/v0.3.3) | 2026-06-24
 ------------------------------------------------------------------------------------
 

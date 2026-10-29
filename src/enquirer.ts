@@ -1,4 +1,7 @@
-import enquirer, { type PromptOptions } from 'enquirer';
+import type { PromptOptions } from './enquirer/enquirer.js';
+
+import enquirer from 'enquirer';
+
 import { confirm } from './enquirer/confirm.js';
 import { Invisible } from './enquirer/invisible.js';
 
