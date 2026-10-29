@@ -1,4 +1,4 @@
-import type { PromptOptions } from './enquirer/enquirer.js';
+import type { Choice, PromptOptions } from './enquirer/enquirer.js';
 
 import enquirer from 'enquirer';
 
@@ -7,6 +7,7 @@ import { Invisible } from './enquirer/invisible.js';
 
 /* eslint-disable unicorn/prefer-export-from */
 export {
+	type Choice,
 	type PromptOptions,
 	confirm,
 	enquirer,

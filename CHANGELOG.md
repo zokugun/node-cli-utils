@@ -9,6 +9,7 @@ Unreleased
 ### Changed
 
 - replace `enquirer` patch with `enquirer.d.ts` file containing need-to-be-exported types
+- export more relevant types for `commander` and `enquirer`
 
 ### Added
 
