@@ -94,7 +94,8 @@
 		"ansi-colors": "4.1.3",
 		"cli-spinners": "3.4.0",
 		"commander": "14.0.3",
-		"enquirer": "2.4.1"
+		"enquirer": "2.4.1",
+		"nano-spawn": "2.1.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "20.5.3",

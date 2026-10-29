@@ -10,6 +10,10 @@ Unreleased
 
 - replace `enquirer` patch with `enquirer.d.ts` file containing need-to-be-exported types
 
+### Added
+
+- add the helper `exec` function for process execution
+
 [v0.3.3](https://github.com/zokugun/node-cli-utils/releases/tag/v0.3.3) | 2026-06-24
 ------------------------------------------------------------------------------------
 
