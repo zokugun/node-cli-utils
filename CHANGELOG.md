@@ -13,6 +13,7 @@ Unreleased
 ### Added
 
 - add the helper `exec` function for process execution
+- add `exit` function to `logger`
 
 [v0.3.3](https://github.com/zokugun/node-cli-utils/releases/tag/v0.3.3) | 2026-06-24
 ------------------------------------------------------------------------------------

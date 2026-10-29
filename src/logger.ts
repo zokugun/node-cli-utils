@@ -58,6 +58,17 @@ export function error(message: string): void { // {{{
 	stdout.persist(message);
 } // }}}
 
+export function exit(code: number = 0): never { // {{{
+	stopProgress();
+
+	if($start) {
+		finishTimer();
+	}
+
+	// eslint-disable-next-line unicorn/no-process-exit
+	process.exit(code);
+} // }}}
+
 export function fatal(message: string, code: number = 1): never { // {{{
 	stopProgress();
 
@@ -152,6 +163,7 @@ export default {
 	createStep,
 	debug,
 	error,
+	exit,
 	fatal,
 	finishTimer,
 	info,
