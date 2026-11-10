@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 
 - add the helper `exec` function for process execution
 - add `exit`, `flagCI` function to `logger`
+- add `unwrapFatal` function
 
 [v0.3.3] | 2026-06-24
 --------------------
