@@ -12,11 +12,12 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 
 - replace `enquirer` patch with `enquirer.d.ts` file containing need-to-be-exported types
 - export more relevant types for `commander` and `enquirer`
+- improve `createStep` in `logger` to accept `createMessage` argument
 
 ### Added
 
 - add the helper `exec` function for process execution
-- add `exit` function to `logger`
+- add `exit`, `flagCI` function to `logger`
 
 [v0.3.3] | 2026-06-24
 --------------------

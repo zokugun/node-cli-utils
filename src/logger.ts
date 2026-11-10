@@ -12,6 +12,7 @@ export type Spinner = {
 
 const { dots } = cliSpinners;
 
+let $ci = isCI();
 let $loading: IndicatorLoading | undefined;
 let $progessFn: (() => void) | undefined;
 let $start: number = 0;
@@ -41,11 +42,18 @@ export function createSpinner(label: string): Spinner { // {{{
 	};
 } // }}}
 
-export function createStep(label: string): () => void { // {{{
-	showProgress(c.bold(label) + c.dim('...'));
+export function createStep(label: string, createMessage?: (label: string) => string): () => void { // {{{
+	if(!$ci) {
+		showProgress(c.bold(label) + c.dim('...'));
+	}
 
 	return () => {
-		check(c.bold(`${label}:`) + c.dim(' done'));
+		if(createMessage) {
+			stdout.persist(createMessage(label));
+		}
+		else {
+			check(c.bold(`${label}:`) + c.dim(' done'));
+		}
 	};
 } // }}}
 
@@ -93,6 +101,10 @@ export function finishTimer(duration?: number): void { // {{{
 	stopProgress(`🏁 ${c.bold('Done')} (in ${duration}s).`);
 } // }}}
 
+export function flagCI(): void { // {{{
+	$ci = true;
+} // }}}
+
 export function info(message: string): void { // {{{
 	stdout.persist(`${c.cyan(c.symbols.bullet)} ${message}`);
 } // }}}
@@ -118,7 +130,7 @@ export function resumeProgress(): void { // {{{
 } // }}}
 
 export function showProgress(label: string): void { // {{{
-	if(isCI()) {
+	if($ci) {
 		stdout.render(label);
 	}
 	else {
@@ -166,6 +178,7 @@ export default {
 	exit,
 	fatal,
 	finishTimer,
+	flagCI,
 	info,
 	newLine,
 	pauseProgress,
