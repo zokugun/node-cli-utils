@@ -1,5 +1,7 @@
+import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/picoexec';
 import type { Choice, PromptOptions } from './enquirer/enquirer.js';
 
+import { ExecProcess, exec } from '@zokugun/picoexec';
 import colors from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
 import * as commander from 'commander';
@@ -12,13 +14,21 @@ import { isCI } from './utils/is-ci.js';
 /* eslint-disable unicorn/prefer-export-from */
 export {
 	type Choice,
+	type ExecFailure,
+	type ExecOptions,
+	type ExecResult,
+	type ExecSuccess,
+	type KillSignal,
 	type PromptOptions,
+	type Subprocess,
 	colors as c,
 	colors,
 	commander,
 	confirm,
 	cliSpinners,
 	enquirer,
+	ExecProcess,
+	exec,
 	Invisible,
 	isCI,
 	logger,

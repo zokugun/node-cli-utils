@@ -1,9 +1,16 @@
-import type { AsyncResult } from '@zokugun/xtry/async';
-import type { Options, Result } from 'nano-spawn';
+import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/picoexec';
 
-import { xtry } from '@zokugun/xtry/async';
-import spawn from 'nano-spawn';
+import { ExecProcess, exec } from '@zokugun/picoexec';
 
-export async function exec(file: string, args?: readonly string[], options?: Options): AsyncResult<Result, Error> {
-	return await xtry(() => spawn(file, args, options));
-}
+/* eslint-disable unicorn/prefer-export-from */
+export {
+	type ExecFailure,
+	type ExecOptions,
+	type ExecResult,
+	type ExecSuccess,
+	type KillSignal,
+	type Subprocess,
+	ExecProcess,
+	exec,
+};
+/* eslint-enable unicorn/prefer-export-from */
