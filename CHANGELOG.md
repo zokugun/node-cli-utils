@@ -14,12 +14,16 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 - export more relevant types for `commander` and `enquirer`
 - improve `createStep` in `logger` to accept `createMessage` argument
 
+### Fixed
+
+- logger: stop the progress when closing a step
+
 ### Added
 
 - add the helper `exec` function for process execution
 - add `exit`, `flagCI` function to `logger`
 - add `unwrapFatal` function
-- adsd `registerSafetyHandlers` function
+- add `registerSafetyHandlers` function
 
 [v0.3.3] | 2026-06-24
 --------------------

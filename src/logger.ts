@@ -49,6 +49,8 @@ export function createStep(label: string, createMessage?: (label: string) => str
 	}
 
 	return () => {
+		stopProgress();
+
 		if(createMessage) {
 			stdout.persist(createMessage(label));
 		}
