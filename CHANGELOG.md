@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 - replace `enquirer` patch with `enquirer.d.ts` file containing need-to-be-exported types
 - export more relevant types for `commander` and `enquirer`
 - improve `createStep` in `logger` to accept `createMessage` argument
+- the `confirm` prompt helper is now supporting the `initial` value
 
 ### Fixed
 

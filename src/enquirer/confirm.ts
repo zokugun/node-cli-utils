@@ -2,7 +2,7 @@ import { type BooleanPromptOptions } from './enquirer.js';
 
 import c from 'ansi-colors';
 
-export function confirm(data: { name: string; message: string }): BooleanPromptOptions {
+export function confirm(data: { name: string; message: string; initial?: boolean }): BooleanPromptOptions {
 	return {
 		type: 'confirm',
 		format(value) {
