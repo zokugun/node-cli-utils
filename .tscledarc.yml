@@ -6,6 +6,7 @@ entry:
   enquirer: enquirer.ts
   exec: exec.ts
   logger: logger.ts
+  utils: utils/index.ts
 format:
   - esm
   - cjs

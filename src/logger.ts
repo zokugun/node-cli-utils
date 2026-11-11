@@ -2,6 +2,7 @@ import process from 'node:process';
 import { stdout } from '@zokugun/log-update-plus';
 import c from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
+import { unwrapFatal } from './unwrap-fatal.js';
 import { isCI } from './utils/is-ci.js';
 
 export type IndicatorLoading = ReturnType<typeof setInterval>;
@@ -187,5 +188,6 @@ export default {
 	showProgress,
 	stopProgress,
 	success,
+	unwrapFatal,
 	warn,
 };

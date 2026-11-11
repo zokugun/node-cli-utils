@@ -44,6 +44,10 @@
 		"./logger": {
 			"import": "./lib/esm/logger.mjs",
 			"require": "./lib/cjs/logger.cjs"
+		},
+		"./utils": {
+			"import": "./lib/esm/utils/index.mjs",
+			"require": "./lib/cjs/utils/index.cjs"
 		}
 	},
 	"main": "lib/cjs/index.cjs",
@@ -70,6 +74,9 @@
 			],
 			"logger": [
 				"./lib/cjs/logger.d.cts"
+			],
+			"utils": [
+				"./lib/cjs/utils/index.d.cts"
 			]
 		}
 	},

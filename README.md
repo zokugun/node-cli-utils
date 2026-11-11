@@ -71,6 +71,7 @@ Choose the entry point that matches your environment and naming preferences:
 | `@zokugun/cli-utils/enquirer`     | prompt utilities from `enquirer` |
 | `@zokugun/cli-utils/exec`         | tiny exec from `picoexec`        |
 | `@zokugun/cli-utils/logger`       | the logger                       |
+| `@zokugun/cli-utils/utils`        | some utilities                   |
 
 Donations
 ---------

@@ -9,8 +9,9 @@ import enquirer from 'enquirer';
 import { confirm } from './enquirer/confirm.js';
 import { Invisible } from './enquirer/invisible.js';
 import logger from './logger.js';
-import { unwrapFatal } from './unwrap-fatal.js'
+import { unwrapFatal } from './unwrap-fatal.js';
 import { isCI } from './utils/is-ci.js';
+import { registerSafetyHandlers } from './utils/register-safety-handlers.js';
 
 /* eslint-disable unicorn/prefer-export-from */
 export {
@@ -33,6 +34,7 @@ export {
 	Invisible,
 	isCI,
 	logger,
+	registerSafetyHandlers,
 	unwrapFatal,
 };
 /* eslint-enable unicorn/prefer-export-from */
