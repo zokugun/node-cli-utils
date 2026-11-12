@@ -5,8 +5,8 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog], and this project adheres to [Semantic Versioning][semver].
 
-[Unreleased]
-------------
+[v0.4.1] | 2026-11-12
+---------------------
 
 ### Chore
 
@@ -93,7 +93,8 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 
 [keepachangelog]: https://keepachangelog.com/en/2.0.0/
 [semver]: https://semver.org/spec/v2.0.0.html
-[unreleased]: https://github.com/zokugun/node-cli-utils/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/zokugun/node-cli-utils/compare/v0.4.1...HEAD
+[v0.4.1]: https://github.com/zokugun/node-cli-utils/releases/tag/v0.4.1
 [v0.4.0]: https://github.com/zokugun/node-cli-utils/releases/tag/v0.4.0
 [v0.3.3]: https://github.com/zokugun/node-cli-utils/releases/tag/v0.3.3
 [v0.3.2]: https://github.com/zokugun/node-cli-utils/releases/tag/v0.3.2
