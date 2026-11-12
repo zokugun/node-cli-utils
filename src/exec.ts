@@ -1,6 +1,6 @@
-import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/picoexec';
+import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/exec-lite';
 
-import { ExecProcess, exec } from '@zokugun/picoexec';
+import { ExecProcess, exec } from '@zokugun/exec-lite';
 
 /* eslint-disable unicorn/prefer-export-from */
 export {

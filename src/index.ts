@@ -1,7 +1,7 @@
-import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/picoexec';
+import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/exec-lite';
 import type { Choice, PromptOptions } from './enquirer/enquirer.js';
 
-import { ExecProcess, exec } from '@zokugun/picoexec';
+import { ExecProcess, exec } from '@zokugun/exec-lite';
 import colors from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
 import * as commander from 'commander';
