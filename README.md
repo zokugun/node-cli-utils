@@ -17,7 +17,7 @@ It bundles lightweight helpers so you can compose rich CLI interactions without 
 - prompt utilities (https://github.com/enquirer/enquirer)
 - a tiny commander wrapper (https://github.com/tj/commander.js)
 - a simple logger (use https://github.com/zokugun/node-log-update-plus)
-- a tiny `child_process` wrapper (use https://github.com/zokugun/node-picoexec)
+- a tiny `child_process` wrapper (use https://github.com/zokugun/node-exec-lite)
 
 Installation
 ------------
@@ -62,16 +62,16 @@ Module entry points
 
 Choose the entry point that matches your environment and naming preferences:
 
-| Import path                       | Description                      |
-| --------------------------------- | -------------------------------- |
-| `@zokugun/cli-utils`              | All utilities                    |
-| `@zokugun/cli-utils/ansi-colors`  | colors from `ansi-colors`        |
-| `@zokugun/cli-utils/cli-spinners` | spinners from `cli-spinners`     |
-| `@zokugun/cli-utils/commander`    | tiny command from `commander`    |
-| `@zokugun/cli-utils/enquirer`     | prompt utilities from `enquirer` |
-| `@zokugun/cli-utils/exec`         | tiny exec from `picoexec`        |
-| `@zokugun/cli-utils/logger`       | the logger                       |
-| `@zokugun/cli-utils/utils`        | some utilities                   |
+| Import path                       | Description                         |
+| --------------------------------- | ----------------------------------- |
+| `@zokugun/cli-utils`              | All utilities                       |
+| `@zokugun/cli-utils/ansi-colors`  | colors from `ansi-colors`           |
+| `@zokugun/cli-utils/cli-spinners` | spinners from `cli-spinners`        |
+| `@zokugun/cli-utils/commander`    | tiny command from `commander`       |
+| `@zokugun/cli-utils/enquirer`     | prompt utilities from `enquirer`    |
+| `@zokugun/cli-utils/exec`         | tiny exec from `@zokugun/exec-lite` |
+| `@zokugun/cli-utils/logger`       | the logger                          |
+| `@zokugun/cli-utils/utils`        | some utilities                      |
 
 Donations
 ---------

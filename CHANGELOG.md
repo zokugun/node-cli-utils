@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog], and this project adheres to [Semantic Versioning][semver].
 
+[Unreleased]
+------------
+
+### Documentation
+
+- replace the references of the old libary with the new one
+
 [v0.4.1] | 2026-11-12
 ---------------------
 
