@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog], and this project adheres to [Semantic Versioning][semver].
 
+[Unreleased]
+------------
+
+### Maintenance
+
+- update `@zokugun/exec-lite` dependency
+
 [v0.4.3] | 2026-11-15
 ---------------------
 
@@ -22,7 +29,7 @@ The format is based on [Keep a Changelog][keepachangelog], and this project adhe
 [v0.4.1] | 2026-11-12
 ---------------------
 
-### Chore
+### Maintenance
 
 - use renamed libary
 
