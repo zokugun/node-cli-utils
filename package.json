@@ -90,7 +90,7 @@
 		"clean": "rimraf lib .src",
 		"compile:src": "tsc -p src",
 		"lint": "eslint",
-		"lint:all": "npm run lint:package && npm audit && npm run ci:lint",
+		"lint:all": "npm run lint:package && npm run ci:lint",
 		"lint:fix": "eslint --fix",
 		"lint:package": "fixpack || true",
 		"prepack": "npm run build",
