@@ -1,7 +1,7 @@
 import type { ExecFailure, ExecResult, ExecSuccess, KillSignal, Options as ExecOptions, Subprocess } from '@zokugun/exec-lite';
 import type { Choice, PromptOptions } from './enquirer/enquirer.js';
 
-import { ExecProcess, exec } from '@zokugun/exec-lite';
+import { ExecProcess, createCommand, exec } from '@zokugun/exec-lite';
 import colors from 'ansi-colors';
 import cliSpinners from 'cli-spinners';
 import * as commander from 'commander';
@@ -23,15 +23,16 @@ export {
 	type KillSignal,
 	type PromptOptions,
 	type Subprocess,
+	ExecProcess,
+	Invisible,
 	colors as c,
 	colors,
 	commander,
 	confirm,
 	cliSpinners,
+	createCommand,
 	enquirer,
-	ExecProcess,
 	exec,
-	Invisible,
 	isCI,
 	logger,
 	registerSafetyHandlers,
