@@ -1,7 +1,7 @@
 {
 	"name": "@zokugun/cli-utils",
 	"description": "Utils for CLI app",
-	"version": "0.4.5",
+	"version": "0.4.6",
 	"author": {
 		"name": "Baptiste Augrain",
 		"email": "daiyam@zokugun.org"
